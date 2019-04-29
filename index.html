@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>GameName</title>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.16.2/dist/phaser.js"></script>"></script>
+    <script>Boot.js</script>
+    <script>Preloader.js</script>
+    <script>StartMenu.js</script>
+    <script>Game1.js</script>
+    <script>Game1Outcome.js</script>
+    <script>Game2.js</script>
+    <script>Game2Outcome.js</script>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="gameContainer"></div>
+
+    <script type="text/javascript">
+        window.onload = function() {
+            var game = new Phaser.Game(800, 600, Phaser.AUTO, "gameContainer");
+            game.state.add('Boot', GameName.boot)
+            game.state.add('Preloader', GameName.Preloader);
+            game.state.add('StartMenu', GameName.StartMenu);
+            game.state.add('Game1', GameName.Game1);
+            game.state.add('Game1Outcome', GameName.Game1Won);
+            game.state.add('Game2', GameName.Game2);
+            game.state.add('Game2Outcome', GameName.Game2Won);
+            game.state.start('Boot');
+;        };
+    </script>
+
+</body>
+</html>
